@@ -1,0 +1,26 @@
+{
+  "name": "projeto-mod20",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "gulp",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dudda-soares/Projeto-mod20.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Dudda-soares/Projeto-mod20/issues"
+  },
+  "homepage": "https://github.com/Dudda-soares/Projeto-mod20#readme",
+  "description": "",
+  "devDependencies": {
+    "gulp": "^5.0.0",
+    "gulp-sass": "^6.0.1",
+    "sass": "^1.88.0"
+  }
+}
