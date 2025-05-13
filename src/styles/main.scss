@@ -1,5 +1,65 @@
-$bgColor: rgb(241, 107, 107);
+@use './variaveis';
+@use './hero';
+
+@font-face {
+    font-family: Avenir;
+    src: url(../../assets/fonts/Avenir-Regular.woff2);
+    font-weight: 400;
+}
+@font-face {
+    font-family: Avenir;
+    src: url(../../assets/fonts/Avenir-Bold.woff2);
+    font-weight: 700;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+
 
 body{
-    background-color: $bgColor;
+    background-color: variaveis.$corDeFundo;
+    font-family: Avenir, sans-serif;
+}
+
+@mixin text($fontSize:16px){
+    font-size: $fontSize;
+    line-height: $fontSize + 10px;
+    color: variaveis.$corTextoPrincipal
+}
+// esta passando o paramento na mesma estrutura do de cima so mudando valor
+.text--big{
+    @include text(18px);
+}
+
+.text {
+    @include text;
+}
+
+.text--small {
+    @include text(12px);
+}
+
+@mixin titulo($font-size:40px){
+    @include text($font-size);
+    color: variaveis.$corTextoSegundario;
+}
+
+.titulo--big {
+    @include titulo(44px);
+}
+.titulo--small {
+    @include titulo(28px);
+}
+.titulo {
+    @include titulo;
+}
+.link-text{
+    @include text(18px);
+    color : variaveis.$corTextoSegundario;
+    text-decoration: underline;
 }
