@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', function(){
     const butao = document.querySelectorAll('[data-tab-button]');
+    const questions = document.querySelectorAll('[data-faq-question]')
     
 
     for (let i = 0; i < butao.length; i++){
@@ -15,7 +16,20 @@ document.addEventListener('DOMContentLoaded', function(){
             
         })
     }
+
+    for(let i = 0; i < questions.length; i++){
+        questions[i].addEventListener('click', abreOuFechaResposta )
+    }
 })
+
+function abreOuFechaResposta(elemento){
+    const classe = 'fag__questao__item--is--open'
+    console.log(elemento);
+    const elementoPai = elemento.target.parentNode;
+
+    elementoPai.classList.toggle(classe);
+    
+}
 
 function removeBotao(){
     const butao = document.querySelectorAll('[data-tab-button]');
