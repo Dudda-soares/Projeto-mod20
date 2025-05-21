@@ -3,6 +3,23 @@ document.addEventListener('DOMContentLoaded', function(){
     const questions = document.querySelectorAll('[data-faq-question]')
     
 
+    const heroSection = document.querySelector('.hero');
+    const alturaHero = heroSection.clientHeight;
+
+    window.addEventListener('scroll', function(){
+        const posicao = window.scrollY;
+
+        if(posicao < alturaHero){
+           ocultarElementodoHeader();
+            
+        }else{
+            exibeElementodoHeader();
+        }
+        
+        
+    })
+
+    // atraçoes
     for (let i = 0; i < butao.length; i++){
         butao[i].addEventListener('click', function(botton){
             const abaAlvo = botton.target.dataset.tabButton;
@@ -16,11 +33,21 @@ document.addEventListener('DOMContentLoaded', function(){
             
         })
     }
-
+    // faq
     for(let i = 0; i < questions.length; i++){
         questions[i].addEventListener('click', abreOuFechaResposta )
     }
 })
+
+function ocultarElementodoHeader(){
+    const header = document.querySelector('header');
+    header.classList.add('header--is-hidden');
+}
+
+function exibeElementodoHeader(){
+    const header = document.querySelector('header');
+    header.classList.remove('header--is-hidden');
+}
 
 function abreOuFechaResposta(elemento){
     const classe = 'fag__questao__item--is--open'
