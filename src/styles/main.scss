@@ -45,14 +45,24 @@ body{
 // esta passando o paramento na mesma estrutura do de cima so mudando valor
 .text--big{
     @include text(18px);
+    @media (max-width: 768px){
+        @include text(15px);
+    }
 }
 
 .text {
     @include text;
+    @media (max-width: 768px){
+        @include text(14px);
+    }
 }
 
 .text--small {
     @include text(12px);
+
+    @media (max-width: 768px){
+        @include text(11px);
+    }
 }
 
 @mixin titulo($font-size:40px){
@@ -62,12 +72,24 @@ body{
 
 .titulo--big {
     @include titulo(44px);
+
+    @media (max-width: 768px){
+        @include titulo(26px);
+    }
 }
 .titulo--small {
     @include titulo(28px);
+
+    @media (max-width: 768px){
+        @include titulo(22px);
+    }
 }
 .titulo {
     @include titulo;
+
+    @media (max-width: 768px){
+        @include titulo(24px);
+    }
 }
 .link-text{
     @include text(18px);
@@ -120,6 +142,9 @@ body{
     grid-template-columns: 1fr 1fr ;
     align-items: center;
     
+    @media (max-width: 768px){
+        display: block;
+    }
 
     img{
         max-width: 100%;
@@ -148,6 +173,12 @@ body{
             justify-content: center;
             left: 50%;
             width: calc(50% - 5.6vw);
+
+            @media (max-width: 768px){
+                position: relative;
+                left: 0;
+                width: 100%;
+            }
         }
     }
 }
